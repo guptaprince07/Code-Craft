@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeCraft | Placement Preparation Portal</title>
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="grid-bg"></div>
+    <div class="glow"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="meta animate-fade-up">System v1.0 // Ready for Uplift</p>
+        <h1 class="hero-title animate-fade-up" style="animation-delay:.1s">Engineer Your<br>Ascension.</h1>
+        <p class="hero-sub animate-fade-up" style="animation-delay:.2s">
+          A disciplined, high-performance preparation portal. Transition from
+          academia to industry leadership through structured, focused modules.
+        </p>
+        <div class="hero-cta animate-fade-up" style="animation-delay:.3s">
+          <a href="#matrix" class="btn-primary">Start Preparation →</a>
+          <span class="meta hide-sm">10 Modules Available</span>
+        </div>
+      </div>
+      <div class="hero-img animate-floaty">
+        <img src="https://media.base44.com/images/public/6a8c257f11956aa670dccfe7/b0cdc8cd9_generated_ec819333.png" alt="Architectural study space">
+      </div>
+    </div>
+    <div class="ticker">
+      <div class="ticker-track animate-marquee">
+        <span>System Design <i>/</i></span><span>Data Structures <i>/</i></span><span>Behavioral <i>/</i></span><span>Algorithms <i>/</i></span><span>DBMS <i>/</i></span><span>Aptitude <i>/</i></span>
+        <span>System Design <i>/</i></span><span>Data Structures <i>/</i></span><span>Behavioral <i>/</i></span><span>Algorithms <i>/</i></span><span>DBMS <i>/</i></span><span>Aptitude <i>/</i></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Skill Matrix -->
+  <section id="matrix" class="matrix">
+    <p class="meta">02 // Skill Matrix</p>
+    <h2 class="section-title">Choose Your Module</h2>
+    <div class="grid-cards">
+      <a href="#dsa"  class="cell animate-fade-up" style="animation-delay:.0s"><p class="meta">Module 01</p><h3>Data Structures</h3><div class="cell-foot"><span class="meta">Coding</span><span class="meta">24 lessons</span></div></a>
+      <a href="#sys"  class="cell animate-fade-up" style="animation-delay:.06s"><p class="meta">Module 02</p><h3>System Design</h3><div class="cell-foot"><span class="meta">Coding</span><span class="meta">18 lessons</span></div></a>
+      <a href="#algo" class="cell animate-fade-up" style="animation-delay:.12s"><p class="meta">Module 03</p><h3>Algorithms</h3><div class="cell-foot"><span class="meta">Coding</span><span class="meta">30 lessons</span></div></a>
+      <a href="#quant" class="cell animate-fade-up" style="animation-delay:.18s"><p class="meta">Module 04</p><h3>Quantitative Aptitude</h3><div class="cell-foot"><span class="meta">Aptitude</span><span class="meta">16 lessons</span></div></a>
+      <a href="#logic" class="cell animate-fade-up" style="animation-delay:.24s"><p class="meta">Module 05</p><h3>Logical Reasoning</h3><div class="cell-foot"><span class="meta">Aptitude</span><span class="meta">14 lessons</span></div></a>
+      <a href="#verbal" class="cell animate-fade-up" style="animation-delay:.3s"><p class="meta">Module 06</p><h3>Verbal Ability</h3><div class="cell-foot"><span class="meta">Aptitude</span><span class="meta">12 lessons</span></div></a>
+      <a href="#os"   class="cell animate-fade-up" style="animation-delay:.36s"><p class="meta">Module 07</p><h3>Operating Systems</h3><div class="cell-foot"><span class="meta">Core</span><span class="meta">20 lessons</span></div></a>
+      <a href="#dbms" class="cell animate-fade-up" style="animation-delay:.42s"><p class="meta">Module 08</p><h3>DBMS</h3><div class="cell-foot"><span class="meta">Core</span><span class="meta">22 lessons</span></div></a>
+      <a href="#cn"   class="cell animate-fade-up" style="animation-delay:.48s"><p class="meta">Module 09</p><h3>Computer Networks</h3><div class="cell-foot"><span class="meta">Core</span><span class="meta">19 lessons</span></div></a>
+      <a href="#hr"   class="cell animate-fade-up" style="animation-delay:.54s"><p class="meta">Module 10</p><h3>Behavioral &amp; HR</h3><div class="cell-foot"><span class="meta">Core</span><span class="meta">10 lessons</span></div></a>
+    </div>
+  </section>
+
+  <!-- Topic Details -->
+  <section id="dsa" class="topic">
+    <p class="meta animate-fade-up">Coding // Module 01</p>
+    <h2 class="section-title animate-fade-up" style="animation-delay:.1s">Data Structures</h2>
+    <div class="topic-img animate-fade-up" style="animation-delay:.2s"><img src="https://media.base44.com/images/public/6a8c257f11956aa670dccfe7/0f5f49e98_generated_image.png" alt="Data Structures"></div>
+    <p class="topic-intro animate-fade-up" style="animation-delay:.3s">Data Structures form the backbone of every coding interview. Master how information is organized, stored, and retrieved efficiently.</p>
+    <pre class="code animate-fade-up" style="animation-delay:.4s"><code>function reverseList(head) {
+  let prev = null, curr = head;
+  while (curr) {
+    const next = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = next;
+  }
+  return prev;
+}</code></pre>
+    <div class="insight animate-fade-up" style="animation-delay:.5s"><p class="meta accent">Key Insight</p><p>Time: O(n). Space: O(1). A foundational pattern appearing in 1-in-3 interviews.</p></div>
+    <a href="#matrix" class="back">↑ Back to Matrix</a>
+  </section>
+
+  <section id="sys" class="topic">
+    <p class="meta animate-fade-up">Coding // Module 02</p>
+    <h2 class="section-title animate-fade-up" style="animation-delay:.1s">System Design</h2>
+    <div class="topic-img animate-fade-up" style="animation-delay:.2s"><img src="https://media.base44.com/images/public/6a8c257f11956aa670dccfe7/0f5f49e98_generated_image.png" alt="System Design"></div>
+    <p class="topic-intro animate-fade-up" style="animation-delay:.3s">System Design tests your ability to architect large-scale systems. Think in terms of trade-offs, bottlenecks, and data flow.</p>
+    <pre class="code animate-fade-up" style="animation-delay:.4s"><code>const users = 100_000_000;
+const dailyActive = users * 0.5;
+const reqsPerUser = 5;
+const rps = (dailyActive * reqsPerUser) / 86400;
+// ~2893 req/s -> plan for 5x peak</code></pre>
+    <div class="insight animate-fade-up" style="animation-delay:.5s"><p class="meta accent">Key Insight</p><p>Always start with capacity estimation. It anchors every subsequent design decision.</p></div>
+    <a href="#matrix" class="back">↑ Back to Matrix</a>
+  </section>
+
+  <section id="algo" class="topic">
+    <p class="meta animate-fade-up">Coding // Module 03</p>
+    <h2 class="section-title animate-fade-up" style="animation-delay:.1s">Algorithms</h2>
+    <div class="topic-img animate-fade-up" style="animation-delay:.2s"><img src="https://media.base44.com/images/public/6a8c257f11956aa670dccfe7/0f5f49e98_generated_image.png" alt="Algorithms"></div>
+    <p class="topic-intro animate-fade-up" style="animation-delay:.3s">Algorithms are step-by-step procedures for solving problems. Efficiency here separates good engineers from great ones.</p>
+    <pre class="code animate-fade-up" style="animation-delay:.4s"><code>function search(arr, target) {
+  let lo = 0, hi = arr.length - 1;
+  while (lo &lt;= hi) {
+    const mid = (lo + hi) &gt;&gt; 1;
+    if (arr[mid] === target) return mid;
+    if (arr[mid] &lt; target) lo = mid + 1;
+    else hi = mid - 1;
+  }
+  return -1;
+}</code></pre>
+    <div class="insight animate-fade-up" style="animation-delay:.5s"><p class="meta accent">Key Insight</p><p>Binary search is the most asked pattern. Recognize sorted data instantly.</p></div>
+    <a href="#matrix" class="back">↑ Back to Matrix</a>
+  </section>
+
+  <section id="quant" class="topic">
+    <p class="meta animate-fade-up">Aptitude // Module 04</p>
+    <h2 class="section-title animate-fade-up" style="animation-delay:.1s">Quantitative Aptitude</h2>
+    <div class="topic-img animate-fade-up" style="animation-delay:.2s"><img src="https://media.base44.com/images/public/6a8c257f11956aa670dccfe7/3a0713247_generated_image.png" alt="Quantitative Aptitude"></div>
+    <p class="topic-intro animate-fade-up" style="animation-delay:.3s">Quantitative aptitude measures numerical fluency. Speed and accuracy are equally weighted in placement tests.</p>
+    <pre class="code animate-fade-up" style="animation-delay:.4s"><code>A = P * (1 + r/n)^(n*t)
+const CI = (p, r, n, t) =&gt;
+  p * Math.pow(1 + r / n, n * t) - p;</code></pre>
+    <div class="insight animate-fade-up" style="animation-delay:.5s"><p class="meta accent">Key Insight</p><p>Memorize core formulas. Most questions are direct applications disguised with context.</p></div>
+    <a href="#matrix" class="back">↑ Back to Matrix</a>
+  </section>
+
+  <section id="logic" class="topic">
+    <p class="meta animate-fade-up">Aptitude // Module 05</p>
+    <h2 class="section-title animate-fade-up" style="animation-delay:.1s">Logical Reasoning</h2>
+    <div class="topic-img animate-fade-up" style="animation-delay:.2s"><img src="https://media.base44.com/images/public/6a8c257f11956aa670dccfe7/3a0713247_generated_image.png" alt="Logical Reasoning"></div>
+    <p class="topic-intro animate-fade-up" style="animation-delay:.3s">Logical reasoning evaluates structured thinking. Draw diagrams and eliminate options systematically.</p>
+    <pre class="code animate-fade-up" style="animation-delay:.4s"><code>Series: 2, 6, 12, 20, 30, ?
+differences: 4, 6, 8, 10 -> next = 12
+answer = 30 + 12 = 42</code></pre>
+    <div class="insight animate-fade-up" style="animation-delay:.5s"><p class="meta accent">Key Insight</p><p>Pattern recognition improves with deliberate practice. Time-box each question to 90 seconds.</p></div>
+    <a href="#matrix" class="back">↑ Back to Matrix</a>
+  </section>
+
+  <section id="verbal" class="topic">
+    <p class="meta animate-fade-up">Aptitude // Module 06</p>
+    <h2 class="section-title animate-fade-up" style="animation-delay:.1s">Verbal Ability</h2>
+    <div class="topic-img animate-fade-up" style="animation-delay:.2s"><img src="https://media.base44.com/images/public/6a8c257f11956aa670dccfe7/3a0713247_generated_image.png" alt="Verbal Ability"></div>
+    <p class="topic-intro animate-fade-up" style="animation-delay:.3s">Verbal ability assesses language precision. Reading speed and comprehension accuracy are the dual levers.</p>
+    <pre class="code animate-fade-up" style="animation-delay:.4s"><code>Active reading framework:
+1. Skim structure
+2. Identify author's stance
+3. Map evidence to claims
+4. Answer inference last</code></pre>
+    <div class="insight animate-fade-up" style="animation-delay:.5s"><p class="meta accent">Key Insight</p><p>Build vocabulary daily — 10 new words with usage. Context beats rote memorization.</p></div>
+    <a href="#matrix" class="back">↑ Back to Matrix</a>
+  </section>
+
+  <section id="os" class="topic">
+    <p class="meta animate-fade-up">Core // Module 07</p>
+    <h2 class="section-title animate-fade-up" style="animation-delay:.1s">Operating Systems</h2>
+    <div class="topic-img animate-fade-up" style="animation-delay:.2s"><img src="https://media.base44.com/images/public/6a8c257f11956aa670dccfe7/b0cdc8cd9_generated_ec819333.png" alt="Operating Systems"></div>
+    <p class="topic-intro animate-fade-up" style="animation-delay:.3s">Operating Systems bridge hardware and software. Concurrency and resource management are the recurring themes.</p>
+    <pre class="code animate-fade-up" style="animation-delay:.4s"><code>semaphore empty = N, full = 0, mutex = 1
+producer: wait(empty); wait(mutex); add; signal(mutex); signal(full)
+consumer: wait(full); wait(mutex); remove; signal(mutex); signal(empty)</code></pre>
+    <div class="insight animate-fade-up" style="animation-delay:.5s"><p class="meta accent">Key Insight</p><p>Deadlock conditions appear in every OS round.</p></div>
+    <a href="#matrix" class="back">↑ Back to Matrix</a>
+  </section>
+
+  <section id="dbms" class="topic">
+    <p class="meta animate-fade-up">Core // Module 08</p>
+    <h2 class="section-title animate-fade-up" style="animation-delay:.1s">DBMS</h2>
+    <div class="topic-img animate-fade-up" style="animation-delay:.2s"><img src="https://media.base44.com/images/public/6a8c257f11956aa670dccfe7/b0cdc8cd9_generated_ec819333.png" alt="DBMS"></div>
+    <p class="topic-intro animate-fade-up" style="animation-delay:.3s">Database Management Systems organize persistent data. SQL fluency and schema design are non-negotiable.</p>
+    <pre class="code animate-fade-up" style="animation-delay:.4s"><code>SELECT MAX(salary)
+FROM employees
+WHERE salary &lt; (
+  SELECT MAX(salary) FROM employees
+);</code></pre>
+    <div class="insight animate-fade-up" style="animation-delay:.5s"><p class="meta accent">Key Insight</p><p>Master JOINs and GROUP BY before anything else. They drive 80% of SQL questions.</p></div>
+    <a href="#matrix" class="back">↑ Back to Matrix</a>
+  </section>
+
+  <section id="cn" class="topic">
+    <p class="meta animate-fade-up">Core // Module 09</p>
+    <h2 class="section-title animate-fade-up" style="animation-delay:.1s">Computer Networks</h2>
+    <div class="topic-img animate-fade-up" style="animation-delay:.2s"><img src="https://media.base44.com/images/public/6a8c257f11956aa670dccfe7/b0cdc8cd9_generated_ec819333.png" alt="Computer Networks"></div>
+    <p class="topic-intro animate-fade-up" style="animation-delay:.3s">Computer Networks govern data exchange. Layered architecture and protocols form the mental model.</p>
+    <pre class="code animate-fade-up" style="animation-delay:.4s"><code>TCP 3-way handshake
+1. Client -> SYN -> Server
+2. Server -> SYN-ACK -> Client
+3. Client -> ACK -> Server</code></pre>
+    <div class="insight animate-fade-up" style="animation-delay:.5s"><p class="meta accent">Key Insight</p><p>Know which layer each protocol belongs to. Most common rapid-fire question.</p></div>
+    <a href="#matrix" class="back">↑ Back to Matrix</a>
+  </section>
+
+  <section id="hr" class="topic">
+    <p class="meta animate-fade-up">Core // Module 10</p>
+    <h2 class="section-title animate-fade-up" style="animation-delay:.1s">Behavioral &amp; HR</h2>
+    <div class="topic-img animate-fade-up" style="animation-delay:.2s"><img src="https://media.base44.com/images/public/6a8c257f11956aa670dccfe7/b0cdc8cd9_generated_ec819333.png" alt="Behavioral & HR"></div>
+    <p class="topic-intro animate-fade-up" style="animation-delay:.3s">Behavioral rounds assess cultural fit and communication. Structure answers with the STAR framework.</p>
+    <pre class="code animate-fade-up" style="animation-delay:.4s"><code>STAR Framework
+S - Situation
+T - Task
+A - Action
+R - Result
+Keep each answer under 90 seconds.</code></pre>
+    <div class="insight animate-fade-up" style="animation-delay:.5s"><p class="meta accent">Key Insight</p><p>Prepare 5 stories covering leadership, conflict, failure, teamwork, and initiative.</p></div>
+    <a href="#matrix" class="back">↑ Back to Matrix</a>
+  </section>
+
+  <!-- Progress Horizon -->
+  <div class="horizon">
+    <span class="meta hide-sm">Preparation Horizon</span>
+    <div class="horizon-bar"><div class="horizon-fill"></div></div>
+    <span class="meta">0%</span>
+  </div>
+
+</body>
+</html>
