@@ -1,130 +1,332 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Placement Preparation Portal — aptitude, coding, DSA, interview and company-specific placement preparation.">
-  <title>Placement Preparation Portal | Placement Preparation</title>
-  <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placement Preparation Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="is-loading">
-<!-- ===== Entry Gate (splash) ===== -->
-<div class="pl-gate" id="plGate" role="dialog" aria-label="Placement Preparation Portal">
-  <div class="pl-gate-inner">
-    <div class="pl-gate-mark">P</div>
-    <p class="pl-gate-title">PLACEMENT PREPARATION PORTAL</p>
-    <p class="pl-gate-sub">A precision-engineered portal for placement preparation.</p>
-    <button type="button" class="pl-gate-btn" id="plEnter">Enter Portal &rarr;</button>
-    <p class="pl-gate-hint">Click to begin</p>
-  </div>
-</div>
-
-<!-- ===== Orbiting Dots Loader ===== -->
-<div class="pl-loader" id="plLoader" aria-hidden="true">
-  <div class="pl-orbit">
-    <i class="pl-dot"></i>
-    <i class="pl-dot"></i>
-    <i class="pl-dot"></i>
-  </div>
-  <div class="pl-label">LOADING</div>
-</div>
-
-
-  <header class="navbar" id="siteNav">
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
     <div class="nav-inner">
-      <a class="brand" href="#home"><span class="brand-mark">P</span> Placement Preparation Portal</a>
-      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">
+      <a href="#" class="brand" data-nav="home">
+        <span class="brand-mark">P</span>
+        <span class="brand-name">Placement Preparation Portal</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#" data-nav="home" class="nav-link active">Home</a>
+        <a href="#" data-nav="aptitude" class="nav-link">Aptitude</a>
+        <a href="#" data-nav="programming" class="nav-link">Programming</a>
+        <a href="#" data-nav="core" class="nav-link">Core</a>
+        <a href="#" data-nav="hr" class="nav-link">HR</a>
+        <a href="#" data-nav="about" class="nav-link">About</a>
+        <a href="#" data-nav="login" class="nav-link nav-login">Log In</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
-      <div class="nav-menu" id="navMenu">
-        <nav class="main-nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#skills">Aptitude</a><a href="#skills">Programming</a><a href="#interviews">DSA</a><a href="#interviews">Interview Questions</a><a href="#companies">Companies</a><a href="#tests">Mock Tests</a><a href="#resume">Resume Builder</a></nav>
-        <div class="nav-actions"><a class="search" href="#search">⌕</a><a class="btn outline small" href="#login">Log In</a><a class="btn primary small" href="#login">Sign Up</a></div>
-      </div>
     </div>
   </header>
-  <main>
-    <section id="home" class="hero"><div class="container hero-grid">
-      <div><span class="tag">🎓 #1 Placement Prep Platform</span><h1>Master the Skills.<br><strong>Crack the Interview.</strong><br>Get Placed.</h1><p class="lead">Everything you need for aptitude, coding, DSA, interviews and company-specific placement preparation — all in one place.</p>
-        <form id="search" class="search-form" action="#skills"><label for="topic-search">⌕</label><input id="topic-search" type="search" placeholder="Search aptitude, coding, companies, interview questions..."><button class="btn primary">Search</button></form>
-        <div class="trending"><b>Trending:</b><a href="#interviews">TCS Interview Questions</a><a href="#skills">Python MCQs</a><a href="#interviews">DSA</a><a href="#companies">Wipro Preparation</a><a href="#tests">Free Mock Test</a><a href="#skills">Java Interview Questions</a></div>
+
+  <main id="app">
+    <!-- ===== HOME ===== -->
+    <section class="page active" id="home">
+      <div class="hero">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <span class="hero-badge">🎓 #1 Placement Prep Platform</span>
+            <h1>Master the Skills.<br><span class="grad">Crack the Interview.</span><br>Get Placed.</h1>
+            <p>Everything you need for aptitude, coding, DSA, interviews and company-specific placement preparation — all in one place.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" data-nav="aptitude">Start Preparing →</button>
+              <button class="btn btn-ghost" data-nav="about">Learn More</button>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="journey-card">
+              <h3>Your Placement Journey</h3>
+              <div class="journey-item">
+                <div class="journey-row"><span>📊 Aptitude Practice</span><strong>85%</strong></div>
+                <div class="progress-track"><div class="progress-fill" style="width:85%"></div></div>
+              </div>
+              <div class="journey-item">
+                <div class="journey-row"><span>💻 Coding Challenges</span><strong>70%</strong></div>
+                <div class="progress-track"><div class="progress-fill" style="width:70%"></div></div>
+              </div>
+              <div class="journey-item">
+                <div class="journey-row"><span>🌳 DSA Problems</span><strong>60%</strong></div>
+                <div class="progress-track"><div class="progress-fill" style="width:60%"></div></div>
+              </div>
+              <div class="journey-item">
+                <div class="journey-row"><span>🎤 Mock Interviews</span><strong>45%</strong></div>
+                <div class="progress-track"><div class="progress-fill" style="width:45%"></div></div>
+              </div>
+              <div class="journey-stats">
+                <div class="jstat"><strong>12K+</strong><span>Topics</span></div>
+                <div class="jstat"><strong>500+</strong><span>Companies</span></div>
+                <div class="jstat"><strong>1M+</strong><span>Students</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <aside class="journey"><h2>Your Placement Journey</h2><div class="progress"><span>🧮 Aptitude Practice <b>85%</b></span><i><em style="width:85%"></em></i></div><div class="progress"><span>💻 Coding Challenges <b>70%</b></span><i><em style="width:70%"></em></i></div><div class="progress"><span>🌳 DSA Problems <b>60%</b></span><i><em style="width:60%"></em></i></div><div class="progress"><span>🎤 Mock Interviews <b>45%</b></span><i><em style="width:45%"></em></i></div><div class="stats"><span><b>12K+</b>Topics</span><span><b>500+</b>Companies</span><span><b>1M+</b>Students</span></div></aside>
-    </div></section>
 
-    <section class="section"><div class="container"><div class="section-title"><h2>Everything You Need for Placement Preparation</h2><p>Build the skills that companies look for and prepare confidently for every stage of the hiring process.</p></div><div class="grid five-cards">
-      <article class="card"><i class="icon blue">🧮</i><h3>Aptitude</h3><p>Practice quantitative aptitude, logical reasoning, verbal reasoning and data interpretation.</p><a href="#skills">Explore Now →</a></article><article class="card"><i class="icon blue">💻</i><h3>Programming</h3><p>Practice programming problems in Java, Python, C++, JavaScript and SQL.</p><a href="#skills">Explore Now →</a></article><article class="card"><i class="icon blue">🌳</i><h3>DSA</h3><p>Strengthen problem-solving skills with arrays, strings, stacks, queues, trees, hashing and more.</p><a href="#interviews">Explore Now →</a></article><article class="card"><i class="icon blue">💼</i><h3>Interview Questions</h3><p>Prepare for technical and HR interviews with frequently asked questions from top companies.</p><a href="#interviews">Explore Now →</a></article><article class="card"><i class="icon blue">📋</i><h3>Mock Tests</h3><p>Experience timed placement tests designed around real company assessment patterns.</p><a href="#tests">Explore Now →</a></article>
-    </div></div></section>
+      <div class="container">
+        <div class="mvp-banner">
+          <strong>ℹ️ This is our front-end prototype / MVP.</strong> The current version demonstrates the complete user interface and navigation flow, while backend-based features such as authentication, progress tracking and dynamic question evaluation are planned for the next phase.
+        </div>
 
-    <section id="skills" class="section surface"><div class="container"><div class="section-title"><h2>Prepare Across Every Skill</h2><p>Comprehensive topic coverage across all placement preparation areas.</p></div><nav class="tabs"><a class="active" href="#skills">Aptitude</a><a href="#skills">Programming</a><a href="#companies">Company Specific</a><a href="#interviews">Interview</a><a href="#tests">Mock Tests</a></nav><div class="grid three-cards">
-      <article class="card topic"><h3>Quantitative Aptitude</h3><a href="#sample">▶ Number System</a><a href="#sample">▶ Percentage</a><a href="#sample">▶ Profit &amp; Loss</a><a href="#sample">▶ Time &amp; Work</a><a href="#sample">▶ Time, Speed &amp; Distance</a><a href="#sample">▶ Probability</a><a class="btn outline small" href="#sample">View All →</a></article><article class="card topic"><h3>Logical Reasoning</h3><a href="#sample">▶ Number Series</a><a href="#sample">▶ Coding &amp; Decoding</a><a href="#sample">▶ Blood Relations</a><a href="#sample">▶ Seating Arrangement</a><a href="#sample">▶ Syllogism</a><a href="#sample">▶ Direction Sense</a><a class="btn outline small" href="#sample">View All →</a></article><article class="card topic"><h3>Verbal Ability</h3><a href="#sample">▶ Error Spotting</a><a href="#sample">▶ Synonyms &amp; Antonyms</a><a href="#sample">▶ Sentence Completion</a><a href="#sample">▶ Reading Comprehension</a><a href="#sample">▶ Idioms &amp; Phrases</a><a class="btn outline small" href="#sample">View All →</a></article>
-    </div></div></section>
+        <h2 class="section-title center">Demonstrable Modules</h2>
+        <p class="section-sub">Explore three fully navigable modules showcasing the intended UI flow and interactions.</p>
+        <div class="grid">
+          <article class="card module-card" data-nav="aptitude">
+            <div class="card-icon blue">📊</div>
+            <h3>Quantitative Aptitude</h3>
+            <p>Practice quantitative aptitude, logical reasoning, verbal reasoning and data interpretation.</p>
+            <span class="card-link">View Module →</span>
+          </article>
+          <article class="card module-card" data-nav="programming">
+            <div class="card-icon indigo">🌳</div>
+            <h3>Data Structures</h3>
+            <p>Strengthen problem-solving skills with arrays, strings, stacks, queues, trees, hashing and more.</p>
+            <span class="card-link">View Module →</span>
+          </article>
+          <article class="card module-card" data-nav="core">
+            <div class="card-icon teal">🗄️</div>
+            <h3>DBMS</h3>
+            <p>Master database management systems — normalization, SQL, transactions, indexing and more.</p>
+            <span class="card-link">View Module →</span>
+          </article>
+        </div>
 
-    <section class="section"><div class="container"><div class="section-title"><h2>Everything You Need to Become Placement Ready</h2></div><div class="grid five-cards highlights"><article class="card"><i class="icon pale-blue">⚡</i><h3>Programming Practice</h3><p>Practice coding problems and strengthen your programming fundamentals.</p></article><article class="card"><i class="icon pale-orange">📝</i><h3>Technical MCQs</h3><p>Test your knowledge of programming, databases, OS and CS concepts.</p></article><article class="card"><i class="icon pale-green">🌲</i><h3>DSA Practice</h3><p>Master important data structures and algorithms through topic-wise questions.</p></article><article class="card"><i class="icon pale-purple">🎤</i><h3>Interview Preparation</h3><p>Prepare for technical and HR rounds with curated interview questions.</p></article><article class="card"><i class="icon pale-yellow">🏢</i><h3>Company Preparation</h3><p>Prepare specifically for the companies you want to crack.</p></article></div></div></section>
+        <h2 class="section-title center">Everything You Need for Placement Preparation</h2>
+        <p class="section-sub">Build the skills that companies look for and prepare confidently for every stage of the hiring process.</p>
+        <div class="grid grid-5">
+          <a href="#" class="cat" data-nav="aptitude"><span>🧮</span><strong>Aptitude</strong><em>Explore Now →</em></a>
+          <a href="#" class="cat" data-nav="programming"><span>⌨️</span><strong>Programming</strong><em>Explore Now →</em></a>
+          <a href="#" class="cat" data-nav="programming"><span>🌳</span><strong>DSA</strong><em>Explore Now →</em></a>
+          <a href="#" class="cat" data-nav="core"><span>📚</span><strong>Core Subjects</strong><em>Explore Now →</em></a>
+          <a href="#" class="cat" data-nav="hr"><span>🎤</span><strong>HR Interview</strong><em>Explore Now →</em></a>
+        </div>
 
-    <section id="interviews" class="section surface"><div class="container"><div class="section-title"><h2>Crack Your Next Interview</h2><p>Practice the questions that recruiters ask most often.</p></div><div class="grid four-cards interview-cards"><article class="interview technical"><h3>Technical Interview</h3><div><p>✓ OOP Concepts<br>✓ DBMS<br>✓ Operating Systems<br>✓ Computer Networks</p><a class="btn primary" href="#sample">Practice Questions →</a></div></article><article class="interview programming"><h3>Programming Interview</h3><div><p>✓ Java<br>✓ Python<br>✓ C++<br>✓ JavaScript</p><a class="btn primary" href="#sample">Practice Questions →</a></div></article><article class="interview dsa"><h3>DSA Interview</h3><div><p>✓ Arrays<br>✓ Strings<br>✓ Linked Lists<br>✓ Trees &amp; Graphs</p><a class="btn primary" href="#sample">Practice Questions →</a></div></article><article class="interview hr"><h3>HR Interview</h3><div><p>✓ Tell me about yourself<br>✓ Strengths &amp; weaknesses<br>✓ Why hire you?<br>✓ 5-year plan</p><a class="btn primary" href="#sample">Practice Questions →</a></div></article></div>
-      <article id="sample" class="sample"><h3>Sample Technical Interview Questions</h3><details open><summary>What are the four pillars of Object-Oriented Programming?</summary><p>Encapsulation, abstraction, inheritance and polymorphism are the four pillars of OOP. They help organize code into reusable and easy-to-manage classes.</p></details><details><summary>What is normalization in DBMS?</summary><p>Normalization is the process of organizing a database to reduce redundancy and improve data integrity.</p></details><details><summary>What is the difference between TCP and UDP?</summary><p>TCP is connection-oriented and reliable. UDP is faster, connectionless and does not guarantee delivery.</p></details></article>
-    </div></section>
+        <div class="cta">
+          <h2>Your Dream Placement Starts With Preparation.</h2>
+          <p>Practice consistently. Build your skills. Walk into your interview with confidence.</p>
+          <div class="hero-actions center">
+            <button class="btn btn-cta-primary" data-nav="aptitude">Start Preparing →</button>
+            <button class="btn btn-cta-outline" data-nav="about">Explore More</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section id="tests" class="section"><div class="container"><div class="section-title"><h2>Test Yourself Like the Real Placement Exam</h2><p>Timed, full-length mock tests built around actual company assessment patterns.</p></div><div class="grid four-cards tests"><article class="daily"><span><b>TODAY</b> &nbsp; Test of the Day</span><h3>Daily Reasoning Challenge</h3><p>⏱ 10 Minutes &nbsp; 📝 10 Questions</p><a class="btn green" href="#how-it-works">Attempt Now →</a></article><article class="card test"><span class="tag">Company Specific</span><h3>TCS NQT Mock Test</h3><p>📝 75 Questions &nbsp; ⏱ 90 Minutes</p><a class="btn primary" href="#how-it-works">Start Test →</a></article><article class="card test"><span class="tag purple-tag">Company Specific</span><h3>Accenture Placement Mock Test</h3><p>📝 60 Questions &nbsp; ⏱ 60 Minutes</p><a class="btn purple" href="#how-it-works">Start Test →</a></article><article class="card test"><span class="tag cyan-tag">Aptitude</span><h3>Aptitude Mega Mock Test</h3><p>📝 50 Questions &nbsp; ⏱ 45 Minutes</p><a class="btn cyan" href="#how-it-works">Start Test →</a></article></div><div id="how-it-works" class="how"><h3>How It Works</h3><div><p><b>1</b><strong>Choose Category</strong><span>Select aptitude, coding, DSA, or company-specific</span></p><p><b>2</b><strong>Pick a Test</strong><span>Browse curated full-length mock tests</span></p><p><b>3</b><strong>Take the Test</strong><span>Timed, real exam-like experience</span></p><p><b>4</b><strong>Check Performance</strong><span>Get detailed analysis and improvement tips</span></p></div></div></div></section>
+    <!-- ===== APTITUDE ===== -->
+    <section class="page" id="aptitude">
+      <div class="container">
+        <header class="page-head">
+          <h1>Quantitative Aptitude</h1>
+          <p>Sharpen your numerical ability with focused practice.</p>
+        </header>
+        <div class="mvp-banner"><strong>Prototype notice:</strong> Practice and quizzes are demonstrative in this MVP.</div>
+        <h2 class="section-title">Covered topics</h2>
+        <ul class="topic-list">
+          <li>Numbers &amp; Number System</li><li>Percentages</li><li>Profit &amp; Loss</li>
+          <li>Time, Speed &amp; Distance</li><li>Time &amp; Work</li><li>Averages</li>
+          <li>Ratio &amp; Proportion</li><li>Data Interpretation</li>
+        </ul>
+        <div class="card module-summary">
+          <h3>Quantitative Aptitude</h3>
+          <p>Category: Aptitude · 8 topics</p>
+          <button class="btn btn-primary" onclick="demoAction('Start Practice')">Start Practice</button>
+          <button class="btn btn-outline" onclick="demoAction('Take Quiz')">Take Quiz</button>
+        </div>
+      </div>
+    </section>
 
-    <section id="resume" class="section resume"><div class="container resume-grid"><div><span class="tag">Resume Builder</span><h2>Build a Resume That Gets Noticed</h2><p class="lead">Create a professional, placement-ready resume in minutes. No design skills needed — just fill in your details.</p><ul><li>✓ Professional templates</li><li>✓ ATS-friendly format</li><li>✓ Skills &amp; Projects section</li><li>✓ Education &amp; Experience</li><li>✓ One-click PDF export</li><li>✓ Placement-optimized design</li></ul><a class="btn primary" href="#login">Build My Resume →</a></div><article class="resume-card"><header><b>A</b><div><h3>Arjun Kumar</h3><p>B.E. Computer Science | Placement 2026</p><a href="#resume">arjun@email.com · github.com/arjunkumar</a></div></header><section><h4>Skills</h4><p>Python · Java · C++ · SQL · React · Git · DSA</p></section><section><h4>Projects</h4><p>E-Commerce App (React, Node) · DSA Visualizer (Python)</p></section><section><h4>Education</h4><p>B.E. CSE — XYZ University, 2022–2026, CGPA: 8.7</p></section><section><h4>Experience</h4><p>Software Intern — ABC Tech (Jun–Aug 2025)</p></section><small>ATS Optimized</small> <small class="pdf">PDF Ready</small></article></div></section>
+    <!-- ===== PROGRAMMING ===== -->
+    <section class="page" id="programming">
+      <div class="container">
+        <header class="page-head">
+          <h1>Programming &amp; DSA</h1>
+          <p>Build strong fundamentals in data structures and algorithms.</p>
+        </header>
+        <div class="mvp-banner"><strong>Prototype notice:</strong> Practice and quizzes are demonstrative in this MVP.</div>
+        <h2 class="section-title">Data structures topics</h2>
+        <ul class="topic-list">
+          <li>Arrays</li><li>Linked Lists</li><li>Stacks &amp; Queues</li>
+          <li>Trees</li><li>Graphs</li><li>Hashing</li>
+          <li>Sorting Algorithms</li><li>Dynamic Programming</li>
+        </ul>
+        <div class="card module-summary">
+          <h3>Data Structures</h3>
+          <p>Category: Programming · 8 topics</p>
+          <button class="btn btn-primary" onclick="demoAction('Start Practice')">Start Practice</button>
+          <button class="btn btn-outline" onclick="demoAction('Take Quiz')">Take Quiz</button>
+        </div>
+      </div>
+    </section>
 
-    <section id="companies" class="section"><div class="container"><div class="section-title"><h2>Prepare for Top Companies</h2><p>Explore company-specific aptitude tests, coding questions, interview questions and placement resources.</p></div><div class="company-grid">
-      <a href="#tests"><b>TC</b>TCS<small>View Preparation →</small></a><a href="#tests"><b>IN</b>Infosys<small>View Preparation →</small></a><a href="#tests"><b>WI</b>Wipro<small>View Preparation →</small></a><a href="#tests"><b>AC</b>Accenture<small>View Preparation →</small></a><a href="#tests"><b>DE</b>Deloitte<small>View Preparation →</small></a><a href="#tests"><b>CO</b>Cognizant<small>View Preparation →</small></a><a href="#tests"><b>CA</b>Capgemini<small>View Preparation →</small></a><a href="#tests"><b>AM</b>Amazon<small>View Preparation →</small></a><a href="#tests"><b>MI</b>Microsoft<small>View Preparation →</small></a><a href="#tests"><b>IB</b>IBM<small>View Preparation →</small></a><a href="#tests"><b>HC</b>HCL<small>View Preparation →</small></a><a href="#tests"><b>TE</b>Tech Mahindra<small>View Preparation →</small></a><a href="#tests"><b>ZO</b>Zoho<small>View Preparation →</small></a><a href="#tests"><b>LT</b>LTIMindtree<small>View Preparation →</small></a><a href="#tests"><b>GO</b>Goldman Sachs<small>View Preparation →</small></a><a href="#tests"><b>RE</b>Reliance Jio<small>View Preparation →</small></a>
-    </div></div></section>
+    <!-- ===== CORE ===== -->
+    <section class="page" id="core">
+      <div class="container">
+        <header class="page-head">
+          <h1>Core CS Subjects</h1>
+          <p>Computer Science fundamentals for technical interviews.</p>
+        </header>
+        <div class="mvp-banner"><strong>Prototype notice:</strong> Practice and quizzes are demonstrative in this MVP.</div>
+        <h2 class="section-title">DBMS topics</h2>
+        <ul class="topic-list">
+          <li>SQL Basics</li><li>Joins</li><li>Normalization</li>
+          <li>ACID &amp; Transactions</li><li>Indexing</li><li>Database Design</li>
+        </ul>
+        <div class="card module-summary">
+          <h3>DBMS</h3>
+          <p>Category: Core · 6 topics</p>
+          <button class="btn btn-primary" onclick="demoAction('Start Practice')">Start Practice</button>
+          <button class="btn btn-outline" onclick="demoAction('Take Quiz')">Take Quiz</button>
+        </div>
+      </div>
+    </section>
 
-    <section class="section surface"><div class="container faq"><div class="section-title"><h2>Frequently Asked Questions</h2><p>Everything you need to know about the Placement Preparation Portal.</p></div><details open><summary>Is the Placement Preparation Portal free to use?</summary><p>Yes! The Placement Preparation Portal offers a comprehensive free plan covering aptitude, DSA, programming, and interview questions.</p></details><details><summary>What topics can I prepare for?</summary><p>You can prepare for Quantitative Aptitude, Logical Reasoning, Verbal Ability, Data Structures &amp; Algorithms, Programming, and HR topics.</p></details><details><summary>Can I practice company-specific questions?</summary><p>Absolutely. We have dedicated preparation packs for TCS, Infosys, Wipro, Accenture, Amazon, Microsoft, Deloitte, and many more top companies.</p></details><details><summary>Do you provide interview questions?</summary><p>Yes. We provide curated technical interview questions and HR interview questions with model answers.</p></details><details><summary>Are mock tests available?</summary><p>Yes. We offer timed full-length mock tests modeled after real placement exams.</p></details><details><summary>Can I create my resume?</summary><p>Our Resume Builder lets you create ATS-friendly, professional resumes with pre-designed templates optimized for placement season.</p></details></div></section>
-    <section id="login" class="cta"><div class="container"><h2>Your Dream Placement Starts With Preparation.</h2><p>Practice consistently. Build your skills. Walk into your interview with confidence.</p><a class="btn light" href="#skills">Start Preparing →</a><a class="btn ghost" href="#companies">Explore Companies</a></div></section>
+    <!-- ===== HR ===== -->
+    <section class="page" id="hr">
+      <div class="container">
+        <header class="page-head">
+          <h1>HR Interview Prep</h1>
+          <p>Common HR round questions and how to approach them.</p>
+        </header>
+        <div class="mvp-banner"><strong>Prototype notice:</strong> Model answers will be added in the next phase.</div>
+        <h2 class="section-title">Frequently asked questions</h2>
+        <div class="grid">
+          <article class="card"><h3>Tell me about yourself</h3><p>Structure: present, past, future.</p></article>
+          <article class="card"><h3>Why should we hire you?</h3><p>Align skills with the role.</p></article>
+          <article class="card"><h3>Strengths &amp; weaknesses</h3><p>Be honest and specific.</p></article>
+          <article class="card"><h3>Where do you see yourself in 5 years?</h3><p>Show growth and direction.</p></article>
+          <article class="card"><h3>Why this company?</h3><p>Research and genuine interest.</p></article>
+          <article class="card"><h3>Salary expectations</h3><p>Research market ranges.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="page" id="about">
+      <div class="container">
+        <header class="page-head">
+          <h1>About Code Craft</h1>
+          <p>An interactive learning platform for technical interview preparation.</p>
+        </header>
+        <div class="mvp-banner"><strong>Prototype notice:</strong> This is an MVP build for demonstration.</div>
+        <h2 class="section-title">Project overview</h2>
+        <p class="lead">Code Craft helps students and professionals master technical interview skills through focused, interactive practice modules across aptitude, programming, core CS subjects and HR rounds.</p>
+        <h2 class="section-title">Available modules</h2>
+        <div class="grid">
+          <article class="card module-card" data-nav="aptitude"><h3>Quantitative Aptitude</h3><span class="card-link">View module →</span></article>
+          <article class="card module-card" data-nav="programming"><h3>Data Structures</h3><span class="card-link">View module →</span></article>
+          <article class="card module-card" data-nav="core"><h3>DBMS</h3><span class="card-link">View module →</span></article>
+        </div>
+        <h2 class="section-title">Planned features</h2>
+        <ul class="topic-list">
+          <li>User accounts &amp; authentication</li><li>Progress tracking &amp; analytics</li>
+          <li>Dynamic evaluation &amp; scoring</li><li>Mock tests</li><li>Resume export</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== LOGIN ===== -->
+    <section class="page" id="login">
+      <div class="auth-wrap login-wrap">
+        <div class="auth-card">
+          <div class="auth-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>
+          </div>
+          <h1>Welcome back</h1>
+          <p class="muted">Log in to your account</p>
+          <form id="loginForm" class="auth-form">
+            <label>Email
+              <div class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="m3 6 9 7 9-7"/></svg>
+                <input type="email" id="loginEmail" placeholder="you@example.com" required />
+              </div>
+            </label>
+            <label>
+              <div class="label-row">Password <a href="#" class="forgot-link" onclick="event.stopPropagation()">Forgot password?</a></div>
+              <div class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                <input type="password" id="loginPassword" placeholder="••••••••" required />
+              </div>
+            </label>
+            <button type="submit" class="btn btn-primary wfull">Log in</button>
+          </form>
+          <div id="loginResult" class="auth-result hidden"></div>
+          <p class="muted center">Don't have an account? <a href="#" data-nav="register">Create one</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REGISTER ===== -->
+    <section class="page" id="register">
+      <div class="auth-wrap">
+        <div class="auth-card">
+          <div class="auth-icon">📝</div>
+          <h1>Create your account</h1>
+          <p class="muted">Sign up to get started</p>
+          <form id="registerForm" class="auth-form">
+            <label>Full Name
+              <input type="text" id="regName" placeholder="Your name" required />
+            </label>
+            <label>Email
+              <input type="email" id="regEmail" placeholder="you@example.com" required />
+            </label>
+            <label>Password
+              <input type="password" id="regPassword" placeholder="••••••••" required />
+            </label>
+            <label>Confirm Password
+              <input type="password" id="regConfirm" placeholder="••••••••" required />
+            </label>
+            <button type="submit" class="btn btn-primary wfull">Create account</button>
+          </form>
+          <div id="registerResult" class="auth-result hidden"></div>
+          <p class="muted center">Already have an account? <a href="#" data-nav="login">Log in</a></p>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer><div class="container footer-grid"><div><a class="brand white-brand" href="#home"><span class="brand-mark">P</span> Placement Preparation Portal</a><p>Prepare Smarter. Get Placed Faster.<br>Your all-in-one platform for placement preparation.</p></div><div><h3>Preparation</h3><a href="#skills">Aptitude</a><a href="#skills">Programming</a><a href="#interviews">DSA</a><a href="#tests">Mock Tests</a></div><div><h3>Career</h3><a href="#interviews">Interview Questions</a><a href="#companies">Companies</a><a href="#resume">Resume Builder</a><a href="#interviews">HR Interview</a></div><div><h3>Company</h3><a href="#home">About</a><a href="#home">Contact</a><a href="#home">Privacy Policy</a><a href="#home">Terms</a></div></div><div class="container copyright"><span>© 2026 Placement Preparation Portal. All Rights Reserved.</span><span><a href="#home">Privacy</a><a href="#home">Terms</a><a href="#home">Sitemap</a></span></div></footer>
-  <script>
-  /* Gate -> Loader -> Site sequence (with failsafe so the overlay can never get stuck) */
-  (function () {
-    var body = document.body;
-    var enter = document.getElementById('plEnter');
-    var started = false;
-    function begin() {
-      if (started) return;
-      started = true;
-      body.classList.remove('is-loading');
-      body.classList.add('pl-run');
-      window.setTimeout(function () { body.classList.add('pl-ready'); }, 3000);
-    }
-    if (enter) enter.addEventListener('click', begin);
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') begin();
-    });
-    window.setTimeout(begin, 12000); /* failsafe: auto-continue if nothing is clicked */
-  })();
 
-  /* Responsive hamburger navigation */
-  (function () {
-    var nav = document.getElementById('siteNav');
-    var toggle = document.getElementById('navToggle');
-    var menu = document.getElementById('navMenu');
-    if (!nav || !toggle || !menu) return;
-    function setNav(open) {
-      nav.classList.toggle('nav-open', open);
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
-    }
-    toggle.addEventListener('click', function () {
-      setNav(!nav.classList.contains('nav-open'));
-    });
-    menu.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setNav(false); /* close after choosing a link */
-    });
-    document.addEventListener('click', function (e) {
-      if (nav.classList.contains('nav-open') && !nav.contains(e.target)) setNav(false);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') setNav(false);
-    });
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 1000) setNav(false);
-    });
-  })();
-  </script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="brand"><span class="brand-mark sm">P</span> Placement Preparation Portal</div>
+        <p>Prepare Smarter. Get Placed Faster. Your all-in-one platform for placement preparation.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Preparation</h4>
+        <a href="#" data-nav="aptitude">Aptitude</a>
+        <a href="#" data-nav="programming">Programming</a>
+        <a href="#" data-nav="programming">DSA</a>
+      </div>
+      <div class="footer-col">
+        <h4>Career</h4>
+        <a href="#" data-nav="hr">HR Interview</a>
+        <a href="#" data-nav="core">Core Subjects</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#" data-nav="about">About</a>
+        <a href="#" data-nav="about">Contact</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Placement Preparation Portal · Prototype build for demonstration.</p>
+  </footer>
+
+  <!-- ===== TOAST ===== -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
