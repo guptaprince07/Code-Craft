@@ -3,329 +3,471 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Placement Preparation Portal</title>
+  <meta name="description" content="Code Craft — prepare for aptitude, programming, core subjects and HR interviews in one place." />
+  <title>Code Craft — Placement Preparation Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>try{var t=localStorage.getItem("cc-theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");if(t==="dark")document.documentElement.classList.add("dark");}catch(e){}</script>
 </head>
 <body>
-  <!-- ===== NAVBAR ===== -->
-  <header class="navbar">
-    <div class="nav-inner">
-      <a href="#" class="brand" data-nav="home">
-        <span class="brand-mark">P</span>
-        <span class="brand-name">Placement Preparation Portal</span>
-      </a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#" data-nav="home" class="nav-link active">Home</a>
-        <a href="#" data-nav="aptitude" class="nav-link">Aptitude</a>
-        <a href="#" data-nav="programming" class="nav-link">Programming</a>
-        <a href="#" data-nav="core" class="nav-link">Core</a>
-        <a href="#" data-nav="hr" class="nav-link">HR</a>
-        <a href="#" data-nav="about" class="nav-link">About</a>
-        <a href="#" data-nav="login" class="nav-link nav-login">Log In</a>
-      </nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
-  <main id="app">
-    <!-- ===== HOME ===== -->
-    <section class="page active" id="home">
-      <div class="hero">
-        <div class="hero-grid">
-          <div class="hero-content">
+  <main>
+    <!-- ============================================================ home -->
+    <div class="view" id="view-home" hidden>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="reveal">
             <span class="hero-badge">🎓 #1 Placement Prep Platform</span>
-            <h1>Master the Skills.<br><span class="grad">Crack the Interview.</span><br>Get Placed.</h1>
-            <p>Everything you need for aptitude, coding, DSA, interviews and company-specific placement preparation — all in one place.</p>
+            <h1>
+              Master the Skills.
+              <strong>Crack the Interview.</strong>
+              Get Placed.
+            </h1>
+            <p class="hero-lead">
+              Everything you need for aptitude, coding, DSA, interviews and company-specific
+              placement preparation — all in one place.
+            </p>
             <div class="hero-actions">
-              <button class="btn btn-primary" data-nav="aptitude">Start Preparing →</button>
-              <button class="btn btn-ghost" data-nav="about">Learn More</button>
+              <a class="btn btn-primary" href="#/aptitude">Start Preparing →</a>
+              <a class="btn btn-outline" href="#/about">Learn More</a>
             </div>
           </div>
 
-          <div class="hero-visual">
-            <div class="journey-card">
-              <h3>Your Placement Journey</h3>
-              <div class="journey-item">
-                <div class="journey-row"><span>📊 Aptitude Practice</span><strong>85%</strong></div>
-                <div class="progress-track"><div class="progress-fill" style="width:85%"></div></div>
+          <aside class="panel-card reveal" style="transition-delay:150ms">
+            <h2>Your Placement Journey</h2>
+            <div class="progress-row"><span>🧮 Aptitude Practice <b>85%</b></span><span class="bar"><i style="--pct:85%"></i></span></div>
+            <div class="progress-row"><span>💻 Coding Challenges <b>70%</b></span><span class="bar"><i style="--pct:70%"></i></span></div>
+            <div class="progress-row"><span>🌳 DSA Problems <b>60%</b></span><span class="bar"><i style="--pct:60%"></i></span></div>
+            <div class="progress-row"><span>🎤 Mock Interviews <b>45%</b></span><span class="bar"><i style="--pct:45%"></i></span></div>
+            <div class="stat-strip">
+              <span><b>12K+</b>Topics</span>
+              <span><b>500+</b>Companies</span>
+              <span><b>1M+</b>Students</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Demonstrable Modules</h2>
+            <p>Explore four fully navigable modules with topic-wise guides, practice and quizzes.</p>
+          </div>
+          <div class="grid grid-3" id="moduleGrid"></div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Everything You Need for Placement Preparation</h2>
+            <p>Build the skills that companies look for and prepare confidently for every stage of the hiring process.</p>
+          </div>
+          <div class="grid grid-5" id="categoryGrid"></div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2>Your Dream Placement Starts With Preparation.</h2>
+        <p>Practice consistently. Build your skills. Walk into your interview with confidence.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light" href="#/aptitude">Start Preparing →</a>
+          <a class="btn btn-glass" href="#/about">Explore More</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================ aptitude / prog / core -->
+    <div class="view" id="view-track" hidden>
+      <section class="page-head">
+        <div class="container">
+          <span class="badge-pill" id="trackBadge"></span>
+          <h1 id="trackTitle"></h1>
+          <p id="trackIntro"></p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split">
+          <div>
+            <div class="section-head left">
+              <h2 id="trackHeadTitle"></h2>
+              <p id="trackHeadText"></p>
+            </div>
+            <div class="topic-grid" id="trackTopics"></div>
+          </div>
+          <aside class="aside-card sticky" id="trackAside"></aside>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================== hr -->
+    <div class="view" id="view-hr" hidden>
+      <section class="page-head">
+        <div class="container">
+          <span class="badge-pill">🎤 HR Interview</span>
+          <h1>HR Interview Preparation</h1>
+          <p>
+            Prepare for the HR round with frequently asked questions and model answers from
+            real placement interviews.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Common HR Questions</h2>
+            <p>Practice the questions recruiters ask most often in the HR round.</p>
+          </div>
+
+          <div class="grid grid-3">
+            <article class="card reveal">
+              <h3>Tell me about yourself</h3>
+              <p class="desc">Covered in the guided HR module with flowcharts, model answers and practice questions.</p>
+            </article>
+            <article class="card reveal" style="transition-delay:60ms">
+              <h3>Strengths &amp; weaknesses</h3>
+              <p class="desc">Covered in the guided HR module with flowcharts, model answers and practice questions.</p>
+            </article>
+            <article class="card reveal" style="transition-delay:120ms">
+              <h3>Why should we hire you?</h3>
+              <p class="desc">Covered in the guided HR module with flowcharts, model answers and practice questions.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Where do you see yourself in 5 years?</h3>
+              <p class="desc">Covered in the guided HR module with flowcharts, model answers and practice questions.</p>
+            </article>
+            <article class="card reveal" style="transition-delay:60ms">
+              <h3>Why do you want to join our company?</h3>
+              <p class="desc">Covered in the guided HR module with flowcharts, model answers and practice questions.</p>
+            </article>
+            <article class="card reveal" style="transition-delay:120ms">
+              <h3>Describe a challenging situation you handled</h3>
+              <p class="desc">Covered in the guided HR module with flowcharts, model answers and practice questions.</p>
+            </article>
+          </div>
+
+          <div class="center" style="margin-top:40px">
+            <a class="btn btn-primary" href="#/module/hr-interview">Start HR Preparation →</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================================== module -->
+    <div class="view" id="view-module" hidden>
+      <div id="moduleMain" hidden>
+        <section class="page-head">
+          <div class="container">
+            <a class="breadcrumb" id="moduleCrumb" href="#/">← Back to Modules</a>
+            <div class="module-title-row">
+              <span class="card-icon" id="moduleIcon"></span>
+              <div>
+                <span class="badge-pill" id="moduleCategory"></span>
+                <h1 id="moduleTitle"></h1>
               </div>
-              <div class="journey-item">
-                <div class="journey-row"><span>💻 Coding Challenges</span><strong>70%</strong></div>
-                <div class="progress-track"><div class="progress-fill" style="width:70%"></div></div>
+            </div>
+            <p id="moduleDescription" style="margin-top:16px;color:var(--muted);max-width:620px"></p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container split">
+            <div>
+              <h2 style="font-size:20px;margin-bottom:18px">Topics in this module</h2>
+              <div class="topic-grid" id="moduleTopics"></div>
+            </div>
+            <aside class="aside-card sticky">
+              <h3>Quick Actions</h3>
+              <p>Start the guided preparation, or jump straight into practice and a timed quiz.</p>
+              <div class="action-list" id="moduleActions">
+                <button class="btn btn-primary" type="button" data-action="guide">▶ Start Preparation</button>
+                <button class="btn btn-outline" type="button" data-action="practice">✎ Start Practice</button>
+                <button class="btn btn-violet" type="button" data-action="quiz">? Take Quiz</button>
+                <a class="btn btn-plain" id="moduleBack" href="#/">← Back to Modules</a>
               </div>
-              <div class="journey-item">
-                <div class="journey-row"><span>🌳 DSA Problems</span><strong>60%</strong></div>
-                <div class="progress-track"><div class="progress-fill" style="width:60%"></div></div>
+            </aside>
+          </div>
+
+          <div class="container" style="margin-top:28px">
+            <div id="actionPanel" hidden></div>
+          </div>
+        </section>
+
+        <section class="section alt" id="guide">
+          <div class="container">
+            <h2 style="font-size:20px;margin-bottom:16px">Topic Overview</h2>
+            <p class="guide-overview" id="guideOverview"></p>
+            <div class="guide-grid">
+              <div class="facts">
+                <h4>Key Points to Remember</h4>
+                <ul id="guideFacts"></ul>
               </div>
-              <div class="journey-item">
-                <div class="journey-row"><span>🎤 Mock Interviews</span><strong>45%</strong></div>
-                <div class="progress-track"><div class="progress-fill" style="width:45%"></div></div>
-              </div>
-              <div class="journey-stats">
-                <div class="jstat"><strong>12K+</strong><span>Topics</span></div>
-                <div class="jstat"><strong>500+</strong><span>Companies</span></div>
-                <div class="jstat"><strong>1M+</strong><span>Students</span></div>
+              <div class="flow">
+                <h4 id="guideFlowTitle"></h4>
+                <div id="guideFlow"></div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
 
-      <div class="container">
-        <div class="mvp-banner">
-          <strong>ℹ️ This is our front-end prototype / MVP.</strong> The current version demonstrates the complete user interface and navigation flow, while backend-based features such as authentication, progress tracking and dynamic question evaluation are planned for the next phase.
-        </div>
-
-        <h2 class="section-title center">Demonstrable Modules</h2>
-        <p class="section-sub">Explore three fully navigable modules showcasing the intended UI flow and interactions.</p>
-        <div class="grid">
-          <article class="card module-card" data-nav="aptitude">
-            <div class="card-icon blue">📊</div>
-            <h3>Quantitative Aptitude</h3>
-            <p>Practice quantitative aptitude, logical reasoning, verbal reasoning and data interpretation.</p>
-            <span class="card-link">View Module →</span>
-          </article>
-          <article class="card module-card" data-nav="programming">
-            <div class="card-icon indigo">🌳</div>
-            <h3>Data Structures</h3>
-            <p>Strengthen problem-solving skills with arrays, strings, stacks, queues, trees, hashing and more.</p>
-            <span class="card-link">View Module →</span>
-          </article>
-          <article class="card module-card" data-nav="core">
-            <div class="card-icon teal">🗄️</div>
-            <h3>DBMS</h3>
-            <p>Master database management systems — normalization, SQL, transactions, indexing and more.</p>
-            <span class="card-link">View Module →</span>
-          </article>
-        </div>
-
-        <h2 class="section-title center">Everything You Need for Placement Preparation</h2>
-        <p class="section-sub">Build the skills that companies look for and prepare confidently for every stage of the hiring process.</p>
-        <div class="grid grid-5">
-          <a href="#" class="cat" data-nav="aptitude"><span>🧮</span><strong>Aptitude</strong><em>Explore Now →</em></a>
-          <a href="#" class="cat" data-nav="programming"><span>⌨️</span><strong>Programming</strong><em>Explore Now →</em></a>
-          <a href="#" class="cat" data-nav="programming"><span>🌳</span><strong>DSA</strong><em>Explore Now →</em></a>
-          <a href="#" class="cat" data-nav="core"><span>📚</span><strong>Core Subjects</strong><em>Explore Now →</em></a>
-          <a href="#" class="cat" data-nav="hr"><span>🎤</span><strong>HR Interview</strong><em>Explore Now →</em></a>
-        </div>
-
-        <div class="cta">
-          <h2>Your Dream Placement Starts With Preparation.</h2>
-          <p>Practice consistently. Build your skills. Walk into your interview with confidence.</p>
-          <div class="hero-actions center">
-            <button class="btn btn-cta-primary" data-nav="aptitude">Start Preparing →</button>
-            <button class="btn btn-cta-outline" data-nav="about">Explore More</button>
+      <div id="moduleMissing" hidden>
+        <section class="section center">
+          <div class="container">
+            <h1 style="font-size:26px">Module not found</h1>
+            <p class="muted" style="margin:12px 0 20px">The module you were looking for does not exist.</p>
+            <a class="btn btn-primary" href="#/">← Back to Home</a>
           </div>
-        </div>
+        </section>
       </div>
-    </section>
+    </div>
 
-    <!-- ===== APTITUDE ===== -->
-    <section class="page" id="aptitude">
-      <div class="container">
-        <header class="page-head">
-          <h1>Quantitative Aptitude</h1>
-          <p>Sharpen your numerical ability with focused practice.</p>
-        </header>
-        <div class="mvp-banner"><strong>Prototype notice:</strong> Practice and quizzes are demonstrative in this MVP.</div>
-        <h2 class="section-title">Covered topics</h2>
-        <ul class="topic-list">
-          <li>Numbers &amp; Number System</li><li>Percentages</li><li>Profit &amp; Loss</li>
-          <li>Time, Speed &amp; Distance</li><li>Time &amp; Work</li><li>Averages</li>
-          <li>Ratio &amp; Proportion</li><li>Data Interpretation</li>
-        </ul>
-        <div class="card module-summary">
-          <h3>Quantitative Aptitude</h3>
-          <p>Category: Aptitude · 8 topics</p>
-          <button class="btn btn-primary" onclick="demoAction('Start Practice')">Start Practice</button>
-          <button class="btn btn-outline" onclick="demoAction('Take Quiz')">Take Quiz</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROGRAMMING ===== -->
-    <section class="page" id="programming">
-      <div class="container">
-        <header class="page-head">
-          <h1>Programming &amp; DSA</h1>
-          <p>Build strong fundamentals in data structures and algorithms.</p>
-        </header>
-        <div class="mvp-banner"><strong>Prototype notice:</strong> Practice and quizzes are demonstrative in this MVP.</div>
-        <h2 class="section-title">Data structures topics</h2>
-        <ul class="topic-list">
-          <li>Arrays</li><li>Linked Lists</li><li>Stacks &amp; Queues</li>
-          <li>Trees</li><li>Graphs</li><li>Hashing</li>
-          <li>Sorting Algorithms</li><li>Dynamic Programming</li>
-        </ul>
-        <div class="card module-summary">
-          <h3>Data Structures</h3>
-          <p>Category: Programming · 8 topics</p>
-          <button class="btn btn-primary" onclick="demoAction('Start Practice')">Start Practice</button>
-          <button class="btn btn-outline" onclick="demoAction('Take Quiz')">Take Quiz</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CORE ===== -->
-    <section class="page" id="core">
-      <div class="container">
-        <header class="page-head">
-          <h1>Core CS Subjects</h1>
-          <p>Computer Science fundamentals for technical interviews.</p>
-        </header>
-        <div class="mvp-banner"><strong>Prototype notice:</strong> Practice and quizzes are demonstrative in this MVP.</div>
-        <h2 class="section-title">DBMS topics</h2>
-        <ul class="topic-list">
-          <li>SQL Basics</li><li>Joins</li><li>Normalization</li>
-          <li>ACID &amp; Transactions</li><li>Indexing</li><li>Database Design</li>
-        </ul>
-        <div class="card module-summary">
-          <h3>DBMS</h3>
-          <p>Category: Core · 6 topics</p>
-          <button class="btn btn-primary" onclick="demoAction('Start Practice')">Start Practice</button>
-          <button class="btn btn-outline" onclick="demoAction('Take Quiz')">Take Quiz</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== HR ===== -->
-    <section class="page" id="hr">
-      <div class="container">
-        <header class="page-head">
-          <h1>HR Interview Prep</h1>
-          <p>Common HR round questions and how to approach them.</p>
-        </header>
-        <div class="mvp-banner"><strong>Prototype notice:</strong> Model answers will be added in the next phase.</div>
-        <h2 class="section-title">Frequently asked questions</h2>
-        <div class="grid">
-          <article class="card"><h3>Tell me about yourself</h3><p>Structure: present, past, future.</p></article>
-          <article class="card"><h3>Why should we hire you?</h3><p>Align skills with the role.</p></article>
-          <article class="card"><h3>Strengths &amp; weaknesses</h3><p>Be honest and specific.</p></article>
-          <article class="card"><h3>Where do you see yourself in 5 years?</h3><p>Show growth and direction.</p></article>
-          <article class="card"><h3>Why this company?</h3><p>Research and genuine interest.</p></article>
-          <article class="card"><h3>Salary expectations</h3><p>Research market ranges.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section class="page" id="about">
-      <div class="container">
-        <header class="page-head">
+    <!-- =========================================================== about -->
+    <div class="view" id="view-about" hidden>
+      <section class="page-head center">
+        <div class="container">
+          <span class="badge-pill">About</span>
           <h1>About Code Craft</h1>
-          <p>An interactive learning platform for technical interview preparation.</p>
-        </header>
-        <div class="mvp-banner"><strong>Prototype notice:</strong> This is an MVP build for demonstration.</div>
-        <h2 class="section-title">Project overview</h2>
-        <p class="lead">Code Craft helps students and professionals master technical interview skills through focused, interactive practice modules across aptitude, programming, core CS subjects and HR rounds.</p>
-        <h2 class="section-title">Available modules</h2>
-        <div class="grid">
-          <article class="card module-card" data-nav="aptitude"><h3>Quantitative Aptitude</h3><span class="card-link">View module →</span></article>
-          <article class="card module-card" data-nav="programming"><h3>Data Structures</h3><span class="card-link">View module →</span></article>
-          <article class="card module-card" data-nav="core"><h3>DBMS</h3><span class="card-link">View module →</span></article>
+          <p style="margin-left:auto;margin-right:auto">
+            A precision-engineered portal for placement preparation — built as a front-end
+            prototype to demonstrate the complete user interface and navigation flow.
+          </p>
         </div>
-        <h2 class="section-title">Planned features</h2>
-        <ul class="topic-list">
-          <li>User accounts &amp; authentication</li><li>Progress tracking &amp; analytics</li>
-          <li>Dynamic evaluation &amp; scoring</li><li>Mock tests</li><li>Resume export</li>
-        </ul>
-      </div>
-    </section>
+      </section>
 
-    <!-- ===== LOGIN ===== -->
-    <section class="page" id="login">
-      <div class="auth-wrap login-wrap">
-        <div class="auth-card">
-          <div class="auth-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>
+      <section class="section">
+        <div class="container">
+          <div class="notice reveal">
+            <span>ℹ️</span>
+            <p>
+              <strong>This is our front-end prototype / MVP.</strong> The current version
+              demonstrates the complete user interface and navigation flow, while
+              backend-based features such as progress tracking and performance analytics are
+              planned for the next phase.
+            </p>
           </div>
-          <h1>Welcome back</h1>
-          <p class="muted">Log in to your account</p>
-          <form id="loginForm" class="auth-form">
-            <label>Email
-              <div class="input-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="m3 6 9 7 9-7"/></svg>
-                <input type="email" id="loginEmail" placeholder="you@example.com" required />
-              </div>
-            </label>
-            <label>
-              <div class="label-row">Password <a href="#" class="forgot-link" onclick="event.stopPropagation()">Forgot password?</a></div>
-              <div class="input-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-                <input type="password" id="loginPassword" placeholder="••••••••" required />
-              </div>
-            </label>
-            <button type="submit" class="btn btn-primary wfull">Log in</button>
-          </form>
-          <div id="loginResult" class="auth-result hidden"></div>
-          <p class="muted center">Don't have an account? <a href="#" data-nav="register">Create one</a></p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ===== REGISTER ===== -->
-    <section class="page" id="register">
+      <section class="section" style="padding-top:0">
+        <div class="container stack">
+          <div class="info-card reveal">
+            <h2>Project Overview</h2>
+            <p>
+              Code Craft is a placement preparation portal that brings together aptitude,
+              programming, core CS subjects and HR interview preparation in one place. This
+              prototype showcases the intended structure, navigation and interactions of the
+              platform.
+            </p>
+          </div>
+
+          <div class="info-card reveal">
+            <h2>Demonstrable Modules</h2>
+            <div class="link-grid" id="aboutModules" style="margin-top:16px"></div>
+          </div>
+
+          <div class="info-card reveal">
+            <h2>Planned for Next Phase</h2>
+            <ul class="plain-list" style="margin-top:12px">
+              <li>Progress tracking and performance analytics</li>
+              <li>Dynamic question evaluation and scoring</li>
+              <li>Timed mock tests with real-time results</li>
+              <li>Resume builder with PDF export</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===================================================== auth: login -->
+    <div class="view" id="view-login" hidden>
       <div class="auth-wrap">
-        <div class="auth-card">
-          <div class="auth-icon">📝</div>
-          <h1>Create your account</h1>
-          <p class="muted">Sign up to get started</p>
-          <form id="registerForm" class="auth-form">
-            <label>Full Name
-              <input type="text" id="regName" placeholder="Your name" required />
-            </label>
-            <label>Email
-              <input type="email" id="regEmail" placeholder="you@example.com" required />
-            </label>
-            <label>Password
-              <input type="password" id="regPassword" placeholder="••••••••" required />
-            </label>
-            <label>Confirm Password
-              <input type="password" id="regConfirm" placeholder="••••••••" required />
-            </label>
-            <button type="submit" class="btn btn-primary wfull">Create account</button>
-          </form>
-          <div id="registerResult" class="auth-result hidden"></div>
-          <p class="muted center">Already have an account? <a href="#" data-nav="login">Log in</a></p>
+        <div class="auth-box">
+          <div class="auth-head">
+            <div class="mark">🔐</div>
+            <h1>Welcome back</h1>
+            <p>Log in to your account</p>
+          </div>
+
+          <div class="auth-card">
+            <div class="auth-error" id="loginError" hidden></div>
+            <!-- <div class="auth-note" id="loginNote" hidden>
+              Add your Base44 app id to the config in <strong>app.js</strong> to enable sign-in from this prototype.
+            </div> -->
+
+            <form class="auth-form" id="loginForm">
+              <div class="field">
+                <label for="loginEmail">Email</label>
+                <input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com" required />
+              </div>
+              <div class="field">
+                <div class="row">
+                  <label for="loginPassword">Password</label>
+                  <a href="#/forgot-password">Forgot password?</a>
+                </div>
+                <input id="loginPassword" type="password" autocomplete="current-password" placeholder="••••••••" required />
+              </div>
+              <button class="btn btn-primary wfull" type="submit" id="loginSubmit">Log in</button>
+            </form>
+          </div>
+
+          <p class="auth-foot">Don't have an account? <a href="#/register">Create one</a></p>
+          <p class="auth-foot"><a href="#/">← Back to Code Craft</a></p>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- ================================================== auth: register -->
+    <div class="view" id="view-register" hidden>
+      <div class="auth-wrap">
+        <div class="auth-box">
+          <div id="registerStepForm">
+            <div class="auth-head">
+              <div class="mark">📝</div>
+              <h1>Create your account</h1>
+              <p>Sign up to get started</p>
+            </div>
+
+            <div class="auth-card">
+              <div class="auth-error" id="registerError" hidden></div>
+              <div class="auth-note" id="registerNote" hidden>
+                Add your Base44 app id to the config in <strong>app.js</strong> to enable sign-up from this prototype.
+              </div>
+
+              <form class="auth-form" id="registerForm">
+                <div class="field">
+                  <label for="registerEmail">Email</label>
+                  <input id="registerEmail" type="email" autocomplete="email" placeholder="you@example.com" required />
+                </div>
+                <div class="field">
+                  <label for="registerPassword">Password</label>
+                  <input id="registerPassword" type="password" autocomplete="new-password" placeholder="••••••••" required />
+                </div>
+                <div class="field">
+                  <label for="registerConfirm">Confirm Password</label>
+                  <input id="registerConfirm" type="password" autocomplete="new-password" placeholder="••••••••" required />
+                </div>
+                <button class="btn btn-primary wfull" type="submit" id="registerSubmit">Create account</button>
+              </form>
+            </div>
+
+            <p class="auth-foot">Already have an account? <a href="#/login">Log in</a></p>
+            <p class="auth-foot"><a href="#/">← Back to Code Craft</a></p>
+          </div>
+
+          <div id="registerStepOtp" hidden>
+            <div class="auth-head">
+              <div class="mark">🛡️</div>
+              <h1>Verify your email</h1>
+              <p id="otpSubtitle">We sent a verification code to your email</p>
+            </div>
+
+            <div class="auth-card">
+              <div class="auth-error" id="otpError" hidden></div>
+              <form class="auth-form" id="otpForm">
+                <div class="field">
+                  <label for="otpInput">Verification code</label>
+                  <input class="otp" id="otpInput" type="text" inputmode="numeric" placeholder="Enter the code from your email" required />
+                </div>
+                <button class="btn btn-primary wfull" type="submit" id="verifyBtn">Verify &amp; continue</button>
+              </form>
+              <p class="auth-foot" style="margin-top:18px">
+                <button class="link-btn" type="button" id="resendBtn">Resend code</button>
+              </p>
+            </div>
+
+            <p class="auth-foot"><button class="link-btn" type="button" id="backBtn">← Use a different email</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================ auth: forgot password -->
+    <div class="view" id="view-forgot" hidden>
+      <div class="auth-wrap">
+        <div class="auth-box">
+          <div class="auth-head">
+            <div class="mark">✉️</div>
+            <h1>Reset password</h1>
+            <p>We'll send you a link to reset it</p>
+          </div>
+
+          <div class="auth-card">
+            <div class="auth-error" id="forgotError" hidden></div>
+            <div class="auth-note" id="forgotNote" hidden>
+              Add your Base44 app id to the config in <strong>app.js</strong> to enable password reset from this prototype.
+            </div>
+
+            <form class="auth-form" id="forgotForm">
+              <div class="field">
+                <label for="forgotEmail">Email address</label>
+                <input id="forgotEmail" type="email" autocomplete="email" placeholder="you@example.com" required />
+              </div>
+              <button class="btn btn-primary wfull" type="submit" id="forgotSubmit">Send reset link</button>
+            </form>
+
+            <p class="muted" id="forgotSent" hidden style="margin-top:16px;text-align:center">
+              If an account exists with that email, you'll receive a password reset link shortly.
+            </p>
+          </div>
+
+          <p class="auth-foot"><a href="#/login">← Back to log in</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================= auth: reset password -->
+    <div class="view" id="view-reset" hidden>
+      <div class="auth-wrap">
+        <div class="auth-box">
+          <div id="resetFormBlock" hidden>
+            <div class="auth-head">
+              <div class="mark">🔒</div>
+              <h1>New password</h1>
+              <p>Enter your new password below</p>
+            </div>
+
+            <div class="auth-card">
+              <div class="auth-error" id="resetError" hidden></div>
+              <form class="auth-form" id="resetForm">
+                <div class="field">
+                  <label for="resetPassword">New Password</label>
+                  <input id="resetPassword" type="password" autocomplete="new-password" placeholder="••••••••" required />
+                </div>
+                <div class="field">
+                  <label for="resetConfirm">Confirm Password</label>
+                  <input id="resetConfirm" type="password" autocomplete="new-password" placeholder="••••••••" required />
+                </div>
+                <button class="btn btn-primary wfull" type="submit" id="resetSubmit">Reset password</button>
+              </form>
+            </div>
+          </div>
+
+          <div id="resetInvalid" hidden>
+            <div class="auth-head">
+              <div class="mark">⚠️</div>
+              <h1>Invalid reset link</h1>
+              <p>This password reset link is missing or invalid</p>
+            </div>
+            <div class="auth-card">
+              <p class="muted center">
+                The link you used appears to be incomplete. Please request a new password reset email.
+              </p>
+            </div>
+            <p class="auth-foot"><a href="#/forgot-password">Request a new link</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-col footer-brand">
-        <div class="brand"><span class="brand-mark sm">P</span> Placement Preparation Portal</div>
-        <p>Prepare Smarter. Get Placed Faster. Your all-in-one platform for placement preparation.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Preparation</h4>
-        <a href="#" data-nav="aptitude">Aptitude</a>
-        <a href="#" data-nav="programming">Programming</a>
-        <a href="#" data-nav="programming">DSA</a>
-      </div>
-      <div class="footer-col">
-        <h4>Career</h4>
-        <a href="#" data-nav="hr">HR Interview</a>
-        <a href="#" data-nav="core">Core Subjects</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="#" data-nav="about">About</a>
-        <a href="#" data-nav="about">Contact</a>
-      </div>
-    </div>
-    <p class="footer-copy">© 2026 Placement Preparation Portal · Prototype build for demonstration.</p>
-  </footer>
-
-  <!-- ===== TOAST ===== -->
-  <div id="toast" class="toast hidden"></div>
+  <div id="site-footer"></div>
 
   <script src="script.js"></script>
 </body>
