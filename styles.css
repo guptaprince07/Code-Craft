@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Code Craft — stylesheet (plain CSS, no framework)
+   Placement Preparation Portal — stylesheet (plain CSS, no framework)
    ========================================================================== */
 
 /* ---------- Design tokens ---------- */
@@ -434,3 +434,28 @@ html.dark .footer { background: #08122a; }
 
 /* ---------- Single-page view switching ---------- */
 .view[hidden] { display: none !important; }
+
+/* Log Out is a <button> but looks exactly like the Log In link. */
+button.nav-link { color: var(--muted); }
+button.nav-cta { background: transparent; font-family: inherit; cursor: pointer; }
+
+/* The longer brand name wraps onto two lines on phones instead of being cut off. */
+@media (max-width: 640px) {
+  .brand-name { white-space: normal; overflow: visible; line-height: 1.15; font-size: 15px; }
+}
+
+/* Navbar: Log In (outlined) + Sign Up (filled) */
+.nav-cta-fill { background: var(--primary); color: #fff; }
+.nav-cta-fill:hover { background: var(--primary); opacity: 0.9; }
+/* Mobile menu copies of the auth links (desktop uses the buttons above) */
+.nav-auth-mobile { display: none; background: none; border-left: 0; border-right: 0; border-top: 0; font-family: inherit; font-size: 14px; font-weight: 400; text-align: left; cursor: pointer; }
+@media (max-width: 860px) { .nav-auth-mobile { display: block; } }
+
+/* Auth: icons inside inputs, icon marks, hint text */
+.auth-head .mark { color: #fff; }
+.input-wrap { position: relative; }
+.input-wrap svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.input-wrap input { width: 100%; padding-left: 42px; }
+.auth-hint { margin-top: 18px; text-align: center; font-size: 12px; color: var(--muted); }
+.nav-user { font-size: 14px; font-weight: 600; max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 860px) { .nav-user { display: none; } }

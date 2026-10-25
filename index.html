@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Code Craft — prepare for aptitude, programming, core subjects and HR interviews in one place." />
-  <title>Code Craft — Placement Preparation Portal</title>
+  <meta name="description" content="Placement Preparation Portal — prepare for aptitude, programming, core subjects and HR interviews in one place." />
+  <title>Placement Preparation Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -15,70 +15,9 @@
   <div id="site-header"></div>
 
   <main>
-    <!-- ============================================================ home -->
+    <!-- ============================================================ home (React) -->
     <div class="view" id="view-home" hidden>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="reveal">
-            <span class="hero-badge">🎓 #1 Placement Prep Platform</span>
-            <h1>
-              Master the Skills.
-              <strong>Crack the Interview.</strong>
-              Get Placed.
-            </h1>
-            <p class="hero-lead">
-              Everything you need for aptitude, coding, DSA, interviews and company-specific
-              placement preparation — all in one place.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#/aptitude">Start Preparing →</a>
-              <a class="btn btn-outline" href="#/about">Learn More</a>
-            </div>
-          </div>
-
-          <aside class="panel-card reveal" style="transition-delay:150ms">
-            <h2>Your Placement Journey</h2>
-            <div class="progress-row"><span>🧮 Aptitude Practice <b>85%</b></span><span class="bar"><i style="--pct:85%"></i></span></div>
-            <div class="progress-row"><span>💻 Coding Challenges <b>70%</b></span><span class="bar"><i style="--pct:70%"></i></span></div>
-            <div class="progress-row"><span>🌳 DSA Problems <b>60%</b></span><span class="bar"><i style="--pct:60%"></i></span></div>
-            <div class="progress-row"><span>🎤 Mock Interviews <b>45%</b></span><span class="bar"><i style="--pct:45%"></i></span></div>
-            <div class="stat-strip">
-              <span><b>12K+</b>Topics</span>
-              <span><b>500+</b>Companies</span>
-              <span><b>1M+</b>Students</span>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-head reveal">
-            <h2>Demonstrable Modules</h2>
-            <p>Explore four fully navigable modules with topic-wise guides, practice and quizzes.</p>
-          </div>
-          <div class="grid grid-3" id="moduleGrid"></div>
-        </div>
-      </section>
-
-      <section class="section alt">
-        <div class="container">
-          <div class="section-head reveal">
-            <h2>Everything You Need for Placement Preparation</h2>
-            <p>Build the skills that companies look for and prepare confidently for every stage of the hiring process.</p>
-          </div>
-          <div class="grid grid-5" id="categoryGrid"></div>
-        </div>
-      </section>
-
-      <section class="cta">
-        <h2>Your Dream Placement Starts With Preparation.</h2>
-        <p>Practice consistently. Build your skills. Walk into your interview with confidence.</p>
-        <div class="hero-actions">
-          <a class="btn btn-light" href="#/aptitude">Start Preparing →</a>
-          <a class="btn btn-glass" href="#/about">Explore More</a>
-        </div>
-      </section>
+      <div id="home-root"></div>
     </div>
 
     <!-- ============================================ aptitude / prog / core -->
@@ -233,7 +172,7 @@
       <section class="page-head center">
         <div class="container">
           <span class="badge-pill">About</span>
-          <h1>About Code Craft</h1>
+          <h1>About Placement Preparation Portal</h1>
           <p style="margin-left:auto;margin-right:auto">
             A precision-engineered portal for placement preparation — built as a front-end
             prototype to demonstrate the complete user interface and navigation flow.
@@ -260,11 +199,11 @@
           <div class="info-card reveal">
             <h2>Project Overview</h2>
             <p>
-              Code Craft is a placement preparation portal that brings together aptitude,
-              programming, core CS subjects and HR interview preparation in one place. This
-              prototype showcases the intended structure, navigation and interactions of the
-              platform.
+              Placement Preparation Portal brings together aptitude, programming, core CS
+              subjects and HR interview preparation in one place. This prototype showcases the
+              intended structure, navigation and interactions of the platform.
             </p>
+            <p style="margin-top:12px">Built by <strong>Team Code Craft</strong>.</p>
           </div>
 
           <div class="info-card reveal">
@@ -290,35 +229,36 @@
       <div class="auth-wrap">
         <div class="auth-box">
           <div class="auth-head">
-            <div class="mark">🔐</div>
+            <div class="mark"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg></div>
             <h1>Welcome back</h1>
             <p>Log in to your account</p>
           </div>
 
           <div class="auth-card">
             <div class="auth-error" id="loginError" hidden></div>
-            <!-- <div class="auth-note" id="loginNote" hidden>
-              Add your Base44 app id to the config in <strong>app.js</strong> to enable sign-in from this prototype.
-            </div> -->
 
             <form class="auth-form" id="loginForm">
               <div class="field">
                 <label for="loginEmail">Email</label>
-                <input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com" required />
+                <div class="input-wrap"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com" required />
+                </div>
               </div>
               <div class="field">
                 <div class="row">
                   <label for="loginPassword">Password</label>
                   <a href="#/forgot-password">Forgot password?</a>
                 </div>
-                <input id="loginPassword" type="password" autocomplete="current-password" placeholder="••••••••" required />
+                <div class="input-wrap"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <input id="loginPassword" type="password" autocomplete="current-password" placeholder="••••••••" required />
+                </div>
               </div>
               <button class="btn btn-primary wfull" type="submit" id="loginSubmit">Log in</button>
             </form>
           </div>
 
           <p class="auth-foot">Don't have an account? <a href="#/register">Create one</a></p>
-          <p class="auth-foot"><a href="#/">← Back to Code Craft</a></p>
+          <p class="auth-foot"><a href="#/">← Return to Home</a></p>
         </div>
       </div>
     </div>
@@ -327,62 +267,48 @@
     <div class="view" id="view-register" hidden>
       <div class="auth-wrap">
         <div class="auth-box">
-          <div id="registerStepForm">
+          <div>
             <div class="auth-head">
-              <div class="mark">📝</div>
+              <div class="mark"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg></div>
               <h1>Create your account</h1>
               <p>Sign up to get started</p>
             </div>
 
             <div class="auth-card">
               <div class="auth-error" id="registerError" hidden></div>
-              <div class="auth-note" id="registerNote" hidden>
-                Add your Base44 app id to the config in <strong>app.js</strong> to enable sign-up from this prototype.
-              </div>
 
               <form class="auth-form" id="registerForm">
                 <div class="field">
+                  <label for="registerName">Full Name</label>
+                  <div class="input-wrap"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <input id="registerName" type="text" autocomplete="name" placeholder="Your name" maxlength="60" required />
+                  </div>
+                </div>
+                <div class="field">
                   <label for="registerEmail">Email</label>
-                  <input id="registerEmail" type="email" autocomplete="email" placeholder="you@example.com" required />
+                  <div class="input-wrap"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <input id="registerEmail" type="email" autocomplete="email" placeholder="you@example.com" required />
+                  </div>
                 </div>
                 <div class="field">
                   <label for="registerPassword">Password</label>
-                  <input id="registerPassword" type="password" autocomplete="new-password" placeholder="••••••••" required />
+                  <div class="input-wrap"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <input id="registerPassword" type="password" autocomplete="new-password" placeholder="At least 6 characters" minlength="6" required />
+                  </div>
                 </div>
                 <div class="field">
                   <label for="registerConfirm">Confirm Password</label>
-                  <input id="registerConfirm" type="password" autocomplete="new-password" placeholder="••••••••" required />
+                  <div class="input-wrap"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <input id="registerConfirm" type="password" autocomplete="new-password" placeholder="••••••••" required />
+                  </div>
                 </div>
                 <button class="btn btn-primary wfull" type="submit" id="registerSubmit">Create account</button>
               </form>
+              <p class="auth-hint">Your account is saved in this browser only — you can use it right away.</p>
             </div>
 
             <p class="auth-foot">Already have an account? <a href="#/login">Log in</a></p>
-            <p class="auth-foot"><a href="#/">← Back to Code Craft</a></p>
-          </div>
-
-          <div id="registerStepOtp" hidden>
-            <div class="auth-head">
-              <div class="mark">🛡️</div>
-              <h1>Verify your email</h1>
-              <p id="otpSubtitle">We sent a verification code to your email</p>
-            </div>
-
-            <div class="auth-card">
-              <div class="auth-error" id="otpError" hidden></div>
-              <form class="auth-form" id="otpForm">
-                <div class="field">
-                  <label for="otpInput">Verification code</label>
-                  <input class="otp" id="otpInput" type="text" inputmode="numeric" placeholder="Enter the code from your email" required />
-                </div>
-                <button class="btn btn-primary wfull" type="submit" id="verifyBtn">Verify &amp; continue</button>
-              </form>
-              <p class="auth-foot" style="margin-top:18px">
-                <button class="link-btn" type="button" id="resendBtn">Resend code</button>
-              </p>
-            </div>
-
-            <p class="auth-foot"><button class="link-btn" type="button" id="backBtn">← Use a different email</button></p>
+            <p class="auth-foot"><a href="#/">← Return to Home</a></p>
           </div>
         </div>
       </div>
@@ -393,29 +319,25 @@
       <div class="auth-wrap">
         <div class="auth-box">
           <div class="auth-head">
-            <div class="mark">✉️</div>
+            <div class="mark"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
             <h1>Reset password</h1>
-            <p>We'll send you a link to reset it</p>
+            <p>Enter your email to set a new password</p>
           </div>
 
           <div class="auth-card">
             <div class="auth-error" id="forgotError" hidden></div>
-            <div class="auth-note" id="forgotNote" hidden>
-              Add your Base44 app id to the config in <strong>app.js</strong> to enable password reset from this prototype.
-            </div>
 
             <form class="auth-form" id="forgotForm">
               <div class="field">
                 <label for="forgotEmail">Email address</label>
-                <input id="forgotEmail" type="email" autocomplete="email" placeholder="you@example.com" required />
+                <div class="input-wrap"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <input id="forgotEmail" type="email" autocomplete="email" placeholder="you@example.com" required />
+                </div>
               </div>
-              <button class="btn btn-primary wfull" type="submit" id="forgotSubmit">Send reset link</button>
+              <button class="btn btn-primary wfull" type="submit" id="forgotSubmit">Continue</button>
             </form>
 
-            <p class="muted" id="forgotSent" hidden style="margin-top:16px;text-align:center">
-              If an account exists with that email, you'll receive a password reset link shortly.
-            </p>
-          </div>
+            </div>
 
           <p class="auth-foot"><a href="#/login">← Back to log in</a></p>
         </div>
@@ -428,7 +350,7 @@
         <div class="auth-box">
           <div id="resetFormBlock" hidden>
             <div class="auth-head">
-              <div class="mark">🔒</div>
+              <div class="mark"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
               <h1>New password</h1>
               <p>Enter your new password below</p>
             </div>
@@ -438,11 +360,15 @@
               <form class="auth-form" id="resetForm">
                 <div class="field">
                   <label for="resetPassword">New Password</label>
-                  <input id="resetPassword" type="password" autocomplete="new-password" placeholder="••••••••" required />
+                  <div class="input-wrap"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <input id="resetPassword" type="password" autocomplete="new-password" placeholder="At least 6 characters" minlength="6" required />
+                  </div>
                 </div>
                 <div class="field">
                   <label for="resetConfirm">Confirm Password</label>
-                  <input id="resetConfirm" type="password" autocomplete="new-password" placeholder="••••••••" required />
+                  <div class="input-wrap"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <input id="resetConfirm" type="password" autocomplete="new-password" placeholder="••••••••" required />
+                  </div>
                 </div>
                 <button class="btn btn-primary wfull" type="submit" id="resetSubmit">Reset password</button>
               </form>
@@ -451,16 +377,16 @@
 
           <div id="resetInvalid" hidden>
             <div class="auth-head">
-              <div class="mark">⚠️</div>
+              <div class="mark"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
               <h1>Invalid reset link</h1>
               <p>This password reset link is missing or invalid</p>
             </div>
             <div class="auth-card">
               <p class="muted center">
-                The link you used appears to be incomplete. Please request a new password reset email.
+                The link you used is missing or has expired. Please start the password reset again.
               </p>
             </div>
-            <p class="auth-foot"><a href="#/forgot-password">Request a new link</a></p>
+            <p class="auth-foot"><a href="#/forgot-password">Start again</a></p>
           </div>
         </div>
       </div>
@@ -469,6 +395,6 @@
 
   <div id="site-footer"></div>
 
-  <script src="script.js"></script>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
