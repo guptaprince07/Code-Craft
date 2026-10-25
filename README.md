@@ -18,12 +18,6 @@ npm run dev        # http://localhost:5173
 npm run build      # production build in dist/
 ```
 
-## Deploy on GitHub Pages
-
-1. Push this folder to a GitHub repo (branch `main`).
-2. In the repo go to **Settings → Pages → Source** and choose **GitHub Actions**.
-3. Every push to `main` builds and publishes the site (`.github/workflows/deploy.yml`).
-
 ## Project structure
 
 ```
